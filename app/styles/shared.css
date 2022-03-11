@@ -218,6 +218,29 @@ a {
     font-weight: 600;
 }
 
+.preContainer {
+    margin: 4rem 0;
+}
+
+.preContainer .description {
+    margin: 1rem 0;
+}
+
+pre {
+    text-align: left;
+    overflow-x: auto;
+    border-radius: 0.5rem;
+    background: #414449;
+    color: #b3bccc;
+    padding: 15px;
+    font-size: 13pt;
+    tab-size: 4;
+    -webkit-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, .25);
+
+}
+
 @media screen and (min-width: 768px) {
     .main {
         padding-top: 4.5rem;

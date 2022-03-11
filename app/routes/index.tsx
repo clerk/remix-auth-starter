@@ -31,6 +31,24 @@ const SignupLink = () => (
   </Link>
 );
 
+const SsrDemoLink = () => (
+  <Link to="/ssr-demo">
+    <a className="cardContent">
+      <img src="/icons/layout.svg" />
+      <div>
+        <h3>Visit the SSR demo page</h3>
+        <p>
+          See how Clerk hydrates the auth state during SSR and CSR, enabling server-side generation even for
+          authenticated pages
+        </p>
+      </div>
+      <div className="arrow">
+        <img src="/icons/arrow-right.svg" />
+      </div>
+    </a>
+  </Link>
+);
+
 // Main component using <SignedIn> and <SignedOut>
 //
 // The SignedIn and SignedOut components are used to control rendering depending
@@ -48,15 +66,19 @@ const Main = () => (
     </SignedOut>
 
     <div className="cards">
-      <div className="card">
-        <SignedIn>
+      <SignedIn>
+        <div className="card">
           <ClerkFeatures />
-        </SignedIn>
-        <SignedOut>
+        </div>
+        <div className="card">
+          <SsrDemoLink />
+        </div>
+      </SignedIn>
+      <SignedOut>
+        <div className="card">
           <SignupLink />
-        </SignedOut>
-      </div>
-
+        </div>
+      </SignedOut>
       <div className="card">
         <a href="https://dashboard.clerk.dev" target="_blank" rel="noreferrer" className="cardContent">
           <img src="/icons/settings.svg" />
