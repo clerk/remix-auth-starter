@@ -1,7 +1,7 @@
 import type { MetaFunction } from "remix";
 import { Links, LiveReload, LoaderFunction, Meta, Outlet, Scripts, ScrollRestoration } from "remix";
 import { rootAuthLoader } from "@clerk/remix/ssr.server";
-import { ConnectClerk, ConnectClerkCatchBoundary } from "@clerk/remix";
+import { ClerkApp, ClerkCatchBoundary } from "@clerk/remix";
 import styles from "~/styles/shared.css";
 import Header from "~/components/Header";
 
@@ -48,6 +48,6 @@ function App() {
   );
 }
 
-export default ConnectClerk(App);
+export default ClerkApp(App);
 
-export const CatchBoundary = ConnectClerkCatchBoundary();
+export const CatchBoundary = ClerkCatchBoundary();
