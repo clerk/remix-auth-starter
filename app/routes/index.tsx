@@ -16,21 +16,6 @@ const ClerkFeatures = () => (
   </Link>
 );
 
-const SignupLink = () => (
-  <Link to="/sign-up">
-    <a className="cardContent">
-      <img src="/icons/user-plus.svg" />
-      <div>
-        <h3>Sign up for an account</h3>
-        <p>Sign up and sign in to explore all the features provided by Clerk out-of-the-box</p>
-      </div>
-      <div className="arrow">
-        <img src="/icons/arrow-right.svg" />
-      </div>
-    </a>
-  </Link>
-);
-
 const SsrDemoLink = () => (
   <Link to="/ssr-demo">
     <a className="cardContent">
@@ -41,6 +26,21 @@ const SsrDemoLink = () => (
           See how Clerk hydrates the auth state during SSR and CSR, enabling server-side generation even for
           authenticated pages
         </p>
+      </div>
+      <div className="arrow">
+        <img src="/icons/arrow-right.svg" />
+      </div>
+    </a>
+  </Link>
+);
+
+const SignupLink = () => (
+  <Link to="/sign-up">
+    <a className="cardContent">
+      <img src="/icons/user-plus.svg" />
+      <div>
+        <h3>Sign up for an account</h3>
+        <p>Sign up and sign in to explore all the features provided by Clerk out-of-the-box</p>
       </div>
       <div className="arrow">
         <img src="/icons/arrow-right.svg" />
@@ -70,6 +70,8 @@ const Main = () => (
         <div className="card">
           <ClerkFeatures />
         </div>
+      </SignedIn>
+      <SignedIn>
         <div className="card">
           <SsrDemoLink />
         </div>
