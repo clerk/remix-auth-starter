@@ -11,7 +11,15 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./app/*"]
+      "~/*": ["./app/*"],
+      "ui/router": ["./app/ui/router.tsx"],
+      "ui/hooks": ["./app/ui/hooks.tsx"],
+      "@clerk/shared/*": ["../clerkfe/packages/shared/*"],
+      "@clerk/clerk-js/*": ["./node_modules/@clerk/clerk-js/*"],
+      "ui/*": ["./node_modules/@clerk/clerk-js/src/ui/*"],
+      "core/*": ["./node_modules/@clerk/clerk-js/src/core/*"],
+      "utils": ["./node_modules/@clerk/clerk-js/src/utils/index.ts"],
+      "utils/*": ["./node_modules/@clerk/clerk-js/src/utils/*"]
     },
 
     // Remix takes care of building everything in `remix build`.
