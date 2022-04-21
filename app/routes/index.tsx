@@ -1,51 +1,45 @@
 import { SignedIn, SignedOut } from "@clerk/remix";
-import { Link } from "remix";
+import { Link } from "@remix-run/react";
 
 const ClerkFeatures = () => (
-  <Link to="/user">
-    <a className="cardContent">
-      <img src="/icons/layout.svg" />
-      <div>
-        <h3>Explore features provided by Clerk</h3>
-        <p>Interact with the user button, user profile, and more to preview what your users will see</p>
-      </div>
-      <div className="arrow">
-        <img src="/icons/arrow-right.svg" />
-      </div>
-    </a>
+  <Link to="/user" className="cardContent">
+    <img src="/icons/layout.svg" />
+    <div>
+      <h3>Explore features provided by Clerk</h3>
+      <p>Interact with the user button, user profile, and more to preview what your users will see</p>
+    </div>
+    <div className="arrow">
+      <img src="/icons/arrow-right.svg" />
+    </div>
   </Link>
 );
 
 const SsrDemoLink = () => (
-  <Link to="/ssr-demo">
-    <a className="cardContent">
-      <img src="/icons/layout.svg" />
-      <div>
-        <h3>Visit the SSR demo page</h3>
-        <p>
-          See how Clerk hydrates the auth state during SSR and CSR, enabling server-side generation even for
-          authenticated pages
-        </p>
-      </div>
-      <div className="arrow">
-        <img src="/icons/arrow-right.svg" />
-      </div>
-    </a>
+  <Link to="/ssr-demo" className="cardContent">
+    <img src="/icons/layout.svg" />
+    <div>
+      <h3>Visit the SSR demo page</h3>
+      <p>
+        See how Clerk hydrates the auth state during SSR and CSR, enabling server-side generation even for
+        authenticated pages
+      </p>
+    </div>
+    <div className="arrow">
+      <img src="/icons/arrow-right.svg" />
+    </div>
   </Link>
 );
 
 const SignupLink = () => (
-  <Link to="/sign-up">
-    <a className="cardContent">
-      <img src="/icons/user-plus.svg" />
-      <div>
-        <h3>Sign up for an account</h3>
-        <p>Sign up and sign in to explore all the features provided by Clerk out-of-the-box</p>
-      </div>
-      <div className="arrow">
-        <img src="/icons/arrow-right.svg" />
-      </div>
-    </a>
+  <Link to="/sign-up" className="cardContent">
+    <img src="/icons/user-plus.svg" />
+    <div>
+      <h3>Sign up for an account</h3>
+      <p>Sign up and sign in to explore all the features provided by Clerk out-of-the-box</p>
+    </div>
+    <div className="arrow">
+      <img src="/icons/arrow-right.svg" />
+    </div>
   </Link>
 );
 
@@ -82,7 +76,7 @@ const Main = () => (
         </div>
       </SignedOut>
       <div className="card">
-        <a href="https://dashboard.clerk.dev" target="_blank" rel="noreferrer" className="cardContent">
+        <a href="https://dashboard.clerk.dev/last-active?utm_source=github&utm_medium=starter_repos&utm_campaign=remix_starter" target="_blank" rel="noreferrer" className="cardContent">
           <img src="/icons/settings.svg" />
           <div>
             <h3>Configure settings for your app</h3>
@@ -96,7 +90,7 @@ const Main = () => (
     </div>
 
     <div className="links">
-      <a href="https://docs.clerk.dev" target="_blank" rel="noreferrer" className="link">
+      <a href="https://clerk.dev/docs?utm_source=github&utm_medium=starter_repos&utm_campaign=remix_starter" target="_blank" rel="noreferrer" className="link">
         <span className="linkText">Read Clerk documentation</span>
       </a>
       <a href="https://remixjs.org/docs" target="_blank" rel="noreferrer" className="link">
