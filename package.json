@@ -1,9 +1,21 @@
 {
-  "name": "remix-app-template",
+  "name": "remix-auth-starter",
   "private": true,
-  "description": "",
-  "license": "",
-  "sideEffects": false,
+  "description": "Add sign up, sign in, profile management, and authenticated API routes to your Remix application with the Remix Auth Starter by Clerk.",
+  "keywords": [
+    "remix",
+    "auth",
+    "starter",
+    "clerk",
+    "react"
+  ],
+  "author": "Clerk, Inc.",
+  "license": "MIT",
+  "homepage": "https://github.com/clerkinc/remix-auth-starter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clerkinc/remix-auth-starter"
+  },
   "scripts": {
     "build": "cross-env NODE_ENV=production remix build",
     "dev": "cross-env NODE_ENV=development remix dev",

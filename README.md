@@ -1,58 +1,87 @@
-# Clerk and Remix Example
+<p align="center">
+  <a href="https://clerk.dev?utm_source=github&utm_medium=remix_auth_starter" target="_blank" rel="noopener noreferrer">
+    <img src="https://images.clerk.dev/static/clerk.svg" alt="Clerk logo" height="50">
+  </a>
+  <br />
+</p>
+
+# Remix Auth Starter
 
 <div align="center">
-    <img alt="Clerk and Hasura logos" src="./docs/logos/clerk-remix.jpg" width="550" />
+
+[![Chat on Discord](https://img.shields.io/discord/856971667393609759.svg?logo=discord)](https://discord.com/invite/b5rXHjAg7A)
+[![Clerk documentation](https://img.shields.io/badge/documentation-clerk-green.svg)](https://clerk.dev/docs?utm_source=github&utm_medium=remix_auth_starter)
+[![Follow on Twitter](https://img.shields.io/twitter/follow/ClerkDev?style=social)](https://twitter.com/intent/follow?screen_name=ClerkDev)
+
 </div>
 
-This example shows how to use [Clerk](https://www.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=remix_starter) with Remix. The example features adding sign up, sign in, profile management, and an authenticated API route to your Remix application.
+<details open>
+<summary><h2 style="display: inline-block; margin-left: 4px;">Table of contents</h2></summary>
 
----
+* [Overview](#overview)
+* [Demo](#demo)
+* [Getting started](#getting-started)
+* [Where the magic happens](#where-the-magic-happens)
+* [Documentation](#documentation)
+* [Deployment](#deployment-vercel)
+* [License info](#license)
 
-**Clerk is Hiring!**
+</details>
 
-Would you like to work on Open Source software and help maintain this repository? Apply today https://apply.workable.com/clerk-dev/.
+## Overview
 
----
+This starter demonstrates how to add authentication to your Remix application with [Clerk](https://www.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=remix_auth_starter). The example features adding sign up, sign in, profile management, and an authenticated API route to your Remix application.
+
+Clerk works with Remix SSR and supports server-side rendering out-of-the-box and follows Remix conventions for loaders and higher-order components (HOCs).
 
 ## Demo
 
-A hosted demo of this example is available at [clerk-remix-starter.vercel.app](https://clerk-remix-starter.vercel.app/)
+A live demo of this starter application is available at [clerk-remix-starter.vercel.app](https://clerk-remix-starter.vercel.app/)
+
+## Getting started
+
+To run the starter application locally, you need to:
+
+1. Sign up for a Clerk account at [https://clerk.dev](https://www.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=remix_auth_starter)
+2. Clone this repo locally
+3. Rename the `.env.sample` to `.env` and then set the required `CLERK_FRONTEND_API` and `CLERK_API_KEY` variables from the [API keys](https://dashboard.clerk.dev/last-active?path=api-keys) screen in your Clerk dashboard.
+4. `npm install` the required dependencies
+5. `npm run dev` to start the development server
+6. Open [http://localhost:3000](http://localhost:3000) and you are ready to go!
 
 ## Where the magic happens
 
-In Remix, app/root.tsx wraps your entire application in both server and browser contexts. Clerk requires three modifications to this file so we can share the authentication state with your Remix routes. First, you need to import`rootAuthLoader` and use it as your root loader. Then, import `ConnectClerk` and`ConnectClerkCatchBoundary` and user these HOCs to wrap the default `App` and `CatchBoundary` components respectively - that's all :)  
+In Remix, `app/root.tsx` wraps your entire application in both server and browser contexts. Clerk makes three modifications to this file so the authentication state is shared with your Remix routes. 
 
-For more details, please refer to the [Get started with Remix](https://docs.clerk.dev/get-started/remix/?utm_source=github&utm_medium=starter_repos&utm_campaign=remix_starter) guide, or simply take a look at the `app/root.tsx` file.
+1. `rootAuthLoader` exported as `loader`
+2. `ClerkCatchBoundary` exported as `CatchBoundary`
+3. The default export wrapped with `ClerkApp`
 
+For more details, please refer to the [Get started with Remix](https://clerk.dev/docs/get-started/remix/?utm_source=github&utm_medium=starter_repos&utm_campaign=remix_auth_starter) guide, or take a look at the [`app/root.tsx`](./app/root.tsx) file.
 
-## Running the starter locally
+## Documentation
 
-To run the example locally you need to:
+To learn more about Clerk and Remix, take a look at the following resources:
 
-1. Sign up for a Clerk account at [http://clerk.dev](https://www.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=remix_starter)
-2. Clone this repo locally
-3. Rename the`.env.sample` to `.env` and then set the required CLERK_FRONTEND_API and CLERK_API_KEY variables from your Clerk project
-4. Run `npm i` to install the required dependencies
-5. Run `npm run dev` to start the development server
-6. Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
-
-## Learn More
-
-To learn more about Clerk.dev and Remix, take a look at the following resources:
-
-- [Quick start](https://docs.clerk.dev/get-started/remix?utm_source=github&utm_medium=starter_repos&utm_campaign=nextjs_starter)
-- [Clerk.dev Documentation](https://docs.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=nextjs_starter) - learn about Clerk.dev features and API.
-- [Remix Documentation](https://remix.run/docs?utm_source=github&utm_medium=starter_repos&utm_campaign=nextjs_starter) - learn about Remix features and API.
+- [Quick start](https://clerk.dev/docs/get-started/remix?utm_source=github&utm_medium=starter_repos&utm_campaign=remix_auth_starter)
+- [Clerk Documentation](https://clerk.dev/docs/?utm_source=github&utm_medium=starter_repos&utm_campaign=remix_auth_starter)
+- [Remix Documentation](https://remix.run/docs)
 
 ## Deployment (Vercel)
 
 After having cloned the repo you only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed.
 
-If you'd like to avoid using a Git repository, you can also deploy the directory by running [Vercel CLI](https://vercel.com/cli):
+If you'd like to avoid connecting a Git repository with Vercel, you can also deploy the directory by running the [Vercel CLI](https://vercel.com/cli):
 
 ```sh
 npm i -g vercel
 vercel
 ```
 
-It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git Integration](https://vercel.com/docs/concepts/git).
+It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git integration](https://vercel.com/docs/concepts/git).
+
+## License
+
+This project is licensed under the **MIT license**.
+
+See [LICENSE](https://github.com/clerkinc/remix-auth-starter/blob/main/LICENSE) for more information.
