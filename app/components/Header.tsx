@@ -1,5 +1,5 @@
 import { SignedIn, SignedOut, UserButton } from "@clerk/remix";
-import { Link } from "remix";
+import { Link } from "@remix-run/react";
 
 // Header component using <SignedIn> & <SignedOut>.
 //
@@ -10,11 +10,9 @@ import { Link } from "remix";
 const Header = () => (
   <header className="header">
     <div className="left">
-      <Link to="/">
-        <a className="logo">
-          <img src="/logo.svg" width="32" height="32" alt="Logo" />
-          <span className="appName">Your application</span>
-        </a>
+      <Link to="/" className="logo">
+        <img src="/logo.svg" width="32" height="32" alt="Logo" />
+        <span className="appName">Your application</span>
       </Link>
     </div>
     <div className="right">
@@ -22,7 +20,7 @@ const Header = () => (
         <Link to="/sign-in">Sign in</Link>
       </SignedOut>
       <SignedIn>
-        <UserButton userProfileUrl="/user" afterSignOutAllUrl="/" />
+        <UserButton userProfileUrl="/user" afterSignOutUrl="/" />
       </SignedIn>
     </div>
   </header>
