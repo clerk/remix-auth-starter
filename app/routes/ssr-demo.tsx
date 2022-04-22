@@ -41,7 +41,7 @@ export default function SsrDemoPage() {
         <div className="preContainer">
           <h2>useUser hook</h2>
           <p className="description">
-            Passing {`{ loadeUser: true }`} to the root loader makes all Clerk data available both during SSR and CSR
+            Passing {`{ loadUser: true }`} to the root loader makes all Clerk data available both during SSR and CSR
           </p>
           <pre>{JSON.stringify({ isLoaded })}</pre>
           <pre>{JSON.stringify({ isSignedIn })}</pre>
