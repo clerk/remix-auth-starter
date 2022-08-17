@@ -1,4 +1,7 @@
-import { LoaderFunction, redirect, useLoaderData } from "remix";
+import type { LoaderFunction } from "@remix-run/node";
+import { redirect } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
+
 import { getAuth } from "@clerk/remix/ssr.server";
 import { users } from "@clerk/remix/api.server";
 

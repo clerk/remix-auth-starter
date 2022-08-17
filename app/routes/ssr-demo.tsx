@@ -1,5 +1,7 @@
+import { redirect } from "@remix-run/node";
+import type { LoaderFunction } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 import { useUser } from "@clerk/remix";
-import { LoaderFunction, redirect, useLoaderData } from "remix";
 import { getAuth } from "@clerk/remix/ssr.server";
 
 const mockGetPosts = (userId: string) => {
