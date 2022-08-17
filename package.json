@@ -22,7 +22,7 @@
     "postinstall": "remix setup node"
   },
   "dependencies": {
-    "@clerk/remix": "^0.3.17-staging.0",
+    "@clerk/remix": "^1.0.3",
     "@remix-run/react": "^1.3.5",
     "@remix-run/vercel": "^1.3.5",
     "react": "^17.0.2",
