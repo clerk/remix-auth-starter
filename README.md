@@ -1,19 +1,28 @@
 <p align="center">
-  <a href="https://clerk.dev?utm_source=github&utm_medium=remix_auth_starter" target="_blank" rel="noopener noreferrer">
-    <img src="https://images.clerk.dev/static/clerk.svg" alt="Clerk logo" height="50">
+  <a href="https://www.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=remix_auth_starter" target="_blank" align="center">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./docs/clerk-logo-dark.png">
+      <img src="./docs/clerk-logo-light.png" height="64">
+    </picture>
   </a>
   <br />
 </p>
 
 # Remix Auth Starter
 
-<div align="center">
+This example shows how to use [Clerk](https://www.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=nextjs_starter) with [Remix](https://remix.run/).
 
-[![Chat on Discord](https://img.shields.io/discord/856971667393609759.svg?logo=discord)](https://discord.com/invite/b5rXHjAg7A)
-[![Clerk documentation](https://img.shields.io/badge/documentation-clerk-green.svg)](https://clerk.dev/docs?utm_source=github&utm_medium=remix_auth_starter)
-[![Follow on Twitter](https://img.shields.io/twitter/follow/ClerkDev?style=social)](https://twitter.com/intent/follow?screen_name=ClerkDev)
+[![chat on Discord](https://img.shields.io/discord/856971667393609759.svg?logo=discord)](https://discord.com/invite/b5rXHjAg7A)
+[![documentation](https://img.shields.io/badge/documentation-clerk-green.svg)](https://docs.clerk.dev)
+[![twitter](https://img.shields.io/twitter/follow/ClerkDev?style=social)](https://twitter.com/intent/follow?screen_name=ClerkDev)
 
-</div>
+---
+
+**Clerk is Hiring!**
+
+Would you like to work on Open Source software and help maintain this repository? [Apply today!](https://apply.workable.com/clerk-dev/)
+
+---
 
 <details open>
 <summary><h2 style="display: inline-block; margin-left: 4px;">Table of contents</h2></summary>
@@ -51,7 +60,7 @@ To run the starter application locally, you need to:
 
 ## Where the magic happens
 
-In Remix, `app/root.tsx` wraps your entire application in both server and browser contexts. Clerk makes three modifications to this file so the authentication state is shared with your Remix routes. 
+In Remix, `app/root.tsx` wraps your entire application in both server and browser contexts. Clerk makes three modifications to this file so the authentication state is shared with your Remix routes.
 
 1. `rootAuthLoader` exported as `loader`
 2. `ClerkCatchBoundary` exported as `CatchBoundary`
