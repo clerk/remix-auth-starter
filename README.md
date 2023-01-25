@@ -53,7 +53,7 @@ To run the starter application locally, you need to:
 
 1. Sign up for a Clerk account at [https://clerk.dev](https://www.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=remix_auth_starter)
 2. Clone this repo locally
-3. Rename the `.env.sample` to `.env` and then set the required `CLERK_FRONTEND_API` and `CLERK_API_KEY` variables from the [API keys](https://dashboard.clerk.dev/last-active?path=api-keys) screen in your Clerk dashboard.
+3. Rename the `.env.sample` to `.env` and then set the required `CLERK_PUBLISHABLE_KEY` and `CLERK_SECRET_KEY` variables from the [API keys](https://dashboard.clerk.dev/last-active?path=api-keys) screen in your Clerk dashboard.
 4. `npm install` the required dependencies
 5. `npm run dev` to start the development server
 6. Open [http://localhost:3000](http://localhost:3000) and you are ready to go!
