@@ -3,7 +3,7 @@ import { redirect } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
 import { getAuth } from "@clerk/remix/ssr.server";
-import {users} from "@clerk/remix/api.server"
+import {createClerkClient} from "@clerk/remix/api.server"
 
 export const loader: LoaderFunction = async (req) => {
   const { userId } = await getAuth(req);
@@ -12,7 +12,7 @@ export const loader: LoaderFunction = async (req) => {
     return redirect("/sign-in?redirect_url=" + req.request.url);
   }
 
-  const user = await users.getUser(userId);
+  const user = await createClerkClient({secretKey: process.env.CLERK_SECRET_KEY}).users.getUser(userId);
   return { serialisedUser: JSON.stringify(user) };
 };
 
