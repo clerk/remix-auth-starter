@@ -3,13 +3,13 @@ import { redirect } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
 import { getAuth } from "@clerk/remix/ssr.server";
-import { users } from "@clerk/remix/api.server";
+import {users} from "@clerk/remix/api.server"
 
-export const loader: LoaderFunction = async ({ request }) => {
-  const { userId } = await getAuth(request);
+export const loader: LoaderFunction = async (req) => {
+  const { userId } = await getAuth(req);
 
   if (!userId) {
-    return redirect("/sign-in?redirect_url=" + request.url);
+    return redirect("/sign-in?redirect_url=" + req.request.url);
   }
 
   const user = await users.getUser(userId);
