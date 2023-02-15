@@ -8,12 +8,12 @@ const mockGetPosts = (userId: string) => {
   return Promise.resolve([{ title: "A Post", content: "Hello from Clerk + Remix" }]);
 };
 
-export const loader: LoaderFunction = async (req) => {
-  const { userId, sessionId, getToken } = await getAuth(req);
+export const loader: LoaderFunction = async (args) => {
+  const { userId, sessionId, getToken } = await getAuth(args);
   console.log("Use getAuth() to access the auth state:", userId, sessionId, getToken);
 
   if (!userId) {
-    return redirect("/sign-in?redirect_url=" + req.request.url);
+    return redirect("/sign-in?redirect_url=" + args.request.url);
   }
 
   const posts = await mockGetPosts(userId);
