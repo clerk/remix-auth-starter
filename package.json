@@ -21,17 +21,17 @@
     "dev": "cross-env NODE_ENV=development remix dev"
   },
   "dependencies": {
-    "@clerk/remix": "^2.2.14",
-    "@remix-run/node": "^1.3.5",
-    "@remix-run/react": "^1.3.5",
-    "@remix-run/vercel": "^1.3.5",
+    "@clerk/remix": "^2.5.0",
+    "@remix-run/node": "^1.14",
+    "@remix-run/react": "^1.14",
+    "@remix-run/vercel": "^1.14",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@remix-run/dev": "^1.3.5",
-    "@remix-run/eslint-config": "^1.3.5",
-    "@remix-run/serve": "^1.3.5",
+    "@remix-run/dev": "^1.14",
+    "@remix-run/eslint-config": "^1.14",
+    "@remix-run/serve": "^1.14",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
     "cross-env": "^7.0.3",

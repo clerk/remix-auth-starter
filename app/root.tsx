@@ -1,5 +1,5 @@
-import type { LoaderFunction, MetaFunction } from "@remix-run/node";
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
+import type { DataFunctionArgs, MetaFunction } from "@remix-run/node";
+import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from "@remix-run/react";
 import { rootAuthLoader } from "@clerk/remix/ssr.server";
 import { ClerkApp, ClerkCatchBoundary } from "@clerk/remix";
 import styles from "~/styles/shared.css";
@@ -16,7 +16,7 @@ export function links() {
   ];
 }
 
-export const loader: LoaderFunction = (args) => {
+export const loader = (args: DataFunctionArgs) => {
   return rootAuthLoader(
     args,
     ({ request }) => {
@@ -29,6 +29,8 @@ export const loader: LoaderFunction = (args) => {
 };
 
 function App() {
+  const { message } = useLoaderData<typeof loader>();
+
   return (
     <html lang="en">
       <head>
