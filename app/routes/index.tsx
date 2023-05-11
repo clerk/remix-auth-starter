@@ -48,7 +48,8 @@ const SignupLink = () => (
 // The SignedIn and SignedOut components are used to control rendering depending
 // on whether or not a visitor is signed in.
 //
-// https://docs.clerk.dev/frontend/react/signedin-and-signedout
+// https://clerk.com/docs/component-reference/signed-in
+// https://clerk.com/docs/component-reference/signed-out
 const Main = () => (
   <main className="main">
     <h1 className="title">Welcome to your new app</h1>
